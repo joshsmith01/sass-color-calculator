@@ -24,5 +24,8 @@
   ],
   "dependencies": {
     "foundation-apps": "~1.1.0"
+  },
+  "devDependencies": {
+    "ng-clip": "~0.2.6"
   }
 }
