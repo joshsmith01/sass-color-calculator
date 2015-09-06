@@ -1,9 +1,51 @@
 ---
 name: home
 url: /
+animationIn: fadeIn
 ---
 
-<div class="grid-container">
-  <h1>Welcome to Foundation for Apps!</h1>
-  <p class="lead">This is version <strong>1.1 Weisshorn</strong>.</p>
+<h1>Sass Color Calculator</h1>
+<p class="lead">You bring the colors, we'll Sassify them!</p>
+
+<div class="grid-block">
+  <div class="grid-content small-12 medium-6">
+    <div class="grid-block">
+      <div class="small-12 medium-6 grid-content">
+        <input class="small-12" type="text" placeholder="Base Color">
+      </div>
+      <div class="small-12 medium-6 grid-content">
+        <input class="small-12" type="text" placeholder="Result Color">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-divider">
+      Click The Color To Copy It:
+      </div>
+      <div class="card-section palette-holder">
+        <div class="grid-block ">
+          <div class="grid-content palette-base">Base Color</div>
+          <div class="grid-content palette-result">Result Color</div>
+        </div>
+      </div>
+      <div class="card-section">
+      <p></p><pre>saturate(darken(#eeeeee, 50), 50);</pre><p></p>
+      </div>
+    </div>
+  </div>
+  <div class="grid-content small-12 medium-6">
+    <div class="card">
+      <div class="card-divider">
+      Click The Color To Copy It:
+      </div>
+      <div class="card-section palette-holder">
+      <div class="grid-block ">
+      <div class="grid-content palette-base">Base Color</div>
+      <div class="grid-content palette-result">Result Color</div>
+      </div>
+      </div>
+      <div class="card-section">
+      <p></p><pre>saturate(darken(#eeeeee, 50), 50);</pre><p></p>
+      </div>
+    </div>
+  </div>
 </div>

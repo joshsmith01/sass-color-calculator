@@ -14,10 +14,14 @@
     <div class="grid-frame vertical">
       <div class="grid-content shrink" style="padding: 0;">
         <ul class="primary condense menu-bar">
-          <li><a><strong>Sass Color Calculator</strong></a></li>
+          <li><a ui-sref="home"><strong>Sass Color Calculator</strong></a></li>
+          <li><a ui-sref="contact"><strong>Contact</strong></a></li>
         </ul>
       </div>
-      <div ui-view class="grid-content">
+      <div class="grid-content">
+        <div class="grid-container">
+          <div ng-class="['ui-animation']" ui-view ></div>
+        </div>
       </div>
     </div>
   </body>
