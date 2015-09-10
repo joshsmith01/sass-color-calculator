@@ -8,12 +8,35 @@
   margin-right: 0;
 }
 .palette-base {
+  padding: 3rem;
   background: lightblue;
   cursor: pointer;
-
+  
 }
 .palette-result {
+  padding: 3rem;
   background: pink;
   cursor: pointer;
 
+}
+.history-header {
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  width: 100%;
+  height: 2.4rem;
+  padding: 0.5rem;
+  margin: 0 0 1rem 0;
+  background: #eee;
+  color: #000;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+vertical-align: middle;
+}
+.history-column {
+  background: #e6e6e6;
+  .card {
+    border: 2.5px solid #E8E8E8;
+  }
 }
