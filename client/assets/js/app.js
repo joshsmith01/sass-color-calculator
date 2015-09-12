@@ -13,7 +13,25 @@
   ])
     .config(config)
     .run(run)
-  ;
+    // The original controller from 
+    .controller('directoryController', function($scope) {
+      $scope.list = [
+        {name: 'Scott', age: 29},
+        {name: 'Ross', age: 29},
+        {name: 'Ben', age: 32}, 
+        {name: 'Courteny', age: 29}
+      ]
+    })
+    // This conroller works to use data submitted by user for use in this controller. -JMS
+    .controller('MyFormCtrl', [function() {
+        this.user = {
+             name: ''
+        };
+        this.register = function() {
+           // console.log('User clicked register', this.user);
+           console.log('User clicked register', this.user);
+        };
+    }]);
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
