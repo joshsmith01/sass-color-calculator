@@ -1,6 +1,7 @@
 (function() {
   'use strict';
 
+
   angular.module('application', [
     'ui.router',
     'ngAnimate',
@@ -30,5 +31,5 @@
   function run() {
     FastClick.attach(document.body);
   }
-
+  
 })();
