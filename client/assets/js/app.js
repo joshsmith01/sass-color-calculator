@@ -34,15 +34,20 @@
     
 
     // This conroller works to use data submitted by user for use in this controller. -JMS
-    .controller('colorCalcCtrl', [function() {
-      // var bColor = bColor;
-      // var rColor = rColor;
-
-      this.register = function() {
-           console.log('colorCalcCtrl');
-        };
+    .controller('colorCalcCtrl', ['$scope',function($scope) {
+        $scope.chiliSpicy = function() {
+          // alert('hi');
+          alert($scope.bColor);
+      };
     }])
     ;
+
+
+    // function CTRL ($scope) {
+    // $scope.val1 = 3;
+    // $scope.val2 = 4;
+    // $scope.total = function() {return $scope.val1 + $scope.val2;};
+    // }
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
