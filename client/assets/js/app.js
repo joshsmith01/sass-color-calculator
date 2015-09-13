@@ -28,10 +28,21 @@
              name: ''
         };
         this.register = function() {
-           // console.log('User clicked register', this.user);
            console.log('User clicked register', this.user);
         };
-    }]);
+    }])
+    
+
+    // This conroller works to use data submitted by user for use in this controller. -JMS
+    .controller('colorCalcCtrl', [function() {
+      // var bColor = bColor;
+      // var rColor = rColor;
+
+      this.register = function() {
+           console.log('colorCalcCtrl');
+        };
+    }])
+    ;
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
