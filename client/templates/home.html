@@ -9,13 +9,13 @@ animationIn: fadeIn
 
 
 <div class="grid-block">
-  <div class="grid-content small-12 medium-6 input-fields">
-    <div class="grid-block" ng-controller="colorCalcCtrl as ctrl">
+  <div class="grid-content small-12 medium-6 input-fields" ng-controller="colorCalcCtrl as ctrl">
+    <div class="grid-block" >
       <div class="small-12 medium-6 grid-content">
-        <input id="base-color" ng-model="ctrl.bColor"  class="small-12 base-color" type="text" placeholder="Base Color">
+        <input id="base-color" class="small-12 base-color" type="text" placeholder="Base Color" ng-model="ctrl.bColor">
       </div>
       <div class="small-12 medium-6 grid-content">
-        <input class="small-12 result-color" type="text" placeholder="Result Color">
+        <input class="small-12 result-color" type="text" placeholder="Result Color" ng-model="ctrl.rColor">
       </div>
       <div class="small-12 medium-6 grid-content">
         <input type="submit" value="Register">
@@ -28,7 +28,7 @@ animationIn: fadeIn
       <div class="card-section palette-holder">
         <div class="grid-block ">
           <div class="grid-content palette-base text-center" style="background: #{{ctrl.bColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your base color">Base of {{ctrl.bColor}}</span></div>
-          <div class="grid-content palette-result text-center"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your resulting color">Result</span></div>
+          <div class="grid-content palette-result text-center" style="background: #{{ctrl.rColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your resulting color">Result of {{ctrl.rColor}}</span></div>
         </div>
       </div>
       <div class="card-section">
@@ -36,6 +36,8 @@ animationIn: fadeIn
       </div>
     </div>
   </div>
+
+  <!--  The History Column -JMS -->
   <div class="grid-content small-12 medium-6 history-column">
     <p class="history-header"><span data-tooltip aria-haspopup="true" class="has-tip" title="The rug. You know. It really tied the room together">Your History</span></p>
     

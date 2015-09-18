@@ -31,8 +31,6 @@
            console.log('User clicked register', this.user);
         };
     }])
-    
-
     // This conroller works to use data submitted by user for use in this controller. -JMS
     .controller('colorCalcCtrl', [function() {
       // var bColor = bColor;
@@ -40,6 +38,7 @@
 
       this.register = function() {
            console.log('colorCalcCtrl');
+           console.log(bColor);
         };
     }])
     ;
