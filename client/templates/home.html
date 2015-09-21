@@ -52,8 +52,8 @@ animationIn: fadeIn
       </div>
       <div class="card-section palette-holder">
       <div class="grid-block ">
-        <div class="grid-content palette-base text-center">Base #{{item.bColor}}</div>
-        <div class="grid-content palette-result text-center">Result #{{item.rColor}}</div>
+        <div class="grid-content palette-base text-center" style="background: #{{item.bColor}};" ng-click="getTextToCopy()" >Base #{{item.bColor}}</div>
+        <div class="grid-content palette-result text-center" style="background: #{{item.rColor}};">Result #{{item.rColor}}</div>
       </div>
       </div>
       <div class="card-section">

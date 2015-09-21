@@ -29,18 +29,21 @@
     // This conroller works to use data submitted by user for use in this controller. -JMS
 
     .controller('colorCalcCtrl', function($scope) {
-      $scope.list = [
-        {bColor: 'bColor 01', rColor: 'rColor 01'},
-        {bColor: 'bColor 02', rColor: 'rColor 02'},
-        {bColor: 'bColor 03', rColor: 'rColor 03'}, 
-        {bColor: 'bColor 04', rColor: 'rColor 04'}
-      ];
+      $scope.list = [];
 
       $scope.addCard = function() {
         $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor});
         // $scope.color.bColor = '';
         // $scope.color.rColor = '';
       }
+
+      $scope.getTextToCopy = function() {
+        
+        // var color = $(this).css("background-color");
+        // alert(color);
+        console.log('hi');
+      }
+
     })
 
     // Custom filter to reverse the order of the array so that the latest entry resides on top. -JMS
