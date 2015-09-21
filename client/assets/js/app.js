@@ -27,6 +27,7 @@
     }])
     
     // This conroller works to use data submitted by user for use in this controller. -JMS
+
     .controller('colorCalcCtrl', function($scope) {
       $scope.list = [
         {bColor: 'bColor 01', rColor: 'rColor 01'},
@@ -50,7 +51,6 @@
     })
     // Keep this semicolon -JMS
     ;
-
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
