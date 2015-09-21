@@ -9,45 +9,26 @@ animationIn: fadeIn
 
 
 <div class="grid-block" ng-controller="colorCalcCtrl">
-<<<<<<< HEAD
   <div class="grid-content small-12 medium-6 input-fields" >
     <form class="grid-block" ng-submit="addCard()">
       <div class="small-12 medium-6 grid-content">
         <input id="base-color" class="small-12 base-color" type="text" placeholder="Base Color" ng-model="bColor">
-=======
-  <div class="grid-content small-12 medium-6 input-fields">
-    <div class="grid-block" >
-      <div class="small-12 medium-6 grid-content">
-        <input id="base-color" ng-model="bColor"  class="small-12 base-color" type="text" placeholder="Base Color">
->>>>>>> b99283a427e5c455bb06f6b330bd4e5070759986
       </div>
       <div class="small-12 medium-6 grid-content">
         <input class="small-12 result-color" type="text" placeholder="Result Color" ng-model="rColor">
       </div>
       <div class="small-12 medium-6 grid-content">
-<<<<<<< HEAD
         <input type="submit" value="register" >
       </div>
     </form>
-=======
-        <button ng-click="chiliSpicy()">Calculate</button>
-      </div>
-
-    </div>
->>>>>>> b99283a427e5c455bb06f6b330bd4e5070759986
     <div class="card">
       <div class="card-divider">
       Click The Color To Copy It:
       </div>
       <div class="card-section palette-holder">
         <div class="grid-block ">
-<<<<<<< HEAD
           <div class="grid-content palette-base text-center" style="background: #{{bColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your base color">Base of {{bColor}}</span></div>
           <div class="grid-content palette-result text-center" style="background: #{{rColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your resulting color">Result of {{rColor}}</span></div>
-=======
-          <div class="grid-content palette-base text-center" style="background: #{{bColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your base color">Base of {{'#'+bColor}}</span></div>
-          <div class="grid-content palette-result text-center"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your resulting color">Result</span></div>
->>>>>>> b99283a427e5c455bb06f6b330bd4e5070759986
         </div>
       </div>
       <div class="card-section">
