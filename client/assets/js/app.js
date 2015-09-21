@@ -13,15 +13,9 @@
   ])
     .config(config)
     .run(run)
-    // The original controller from 
-    .controller('directoryController', function($scope) {
-      $scope.list = [
-        {name: 'Scott', age: 29},
-        {name: 'Ross', age: 29},
-        {name: 'Ben', age: 32}, 
-        {name: 'Courteny', age: 29}
-      ]
-    })
+
+
+    
     // This conroller works to use data submitted by user for use in this controller. -JMS
     .controller('MyFormCtrl', [function() {
         this.user = {
@@ -31,17 +25,32 @@
            console.log('User clicked register', this.user);
         };
     }])
+    
     // This conroller works to use data submitted by user for use in this controller. -JMS
-    .controller('colorCalcCtrl', [function() {
-      // var bColor = bColor;
-      // var rColor = rColor;
+    .controller('colorCalcCtrl', function($scope) {
+      $scope.list = [
+        {bColor: 'bColor 01', rColor: 'rColor 01'},
+        {bColor: 'bColor 02', rColor: 'rColor 02'},
+        {bColor: 'bColor 03', rColor: 'rColor 03'}, 
+        {bColor: 'bColor 04', rColor: 'rColor 04'}
+      ];
 
-      this.register = function() {
-           console.log('colorCalcCtrl');
-           console.log(bColor);
-        };
-    }])
+      $scope.addCard = function() {
+        $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor});
+        // $scope.color.bColor = '';
+        // $scope.color.rColor = '';
+      }
+    })
+
+    // Custom filter to reverse the order of the array so that the latest entry resides on top. -JMS
+    .filter('reverse', function() {
+      return function(items) {
+        return items.slice().reverse();
+      };
+    })
+    // Keep this semicolon -JMS
     ;
+
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 

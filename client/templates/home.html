@@ -8,47 +8,52 @@ animationIn: fadeIn
 <p class="lead">You bring the colors, we'll Sassify them!</p>
 
 
-<div class="grid-block">
-  <div class="grid-content small-12 medium-6 input-fields" ng-controller="colorCalcCtrl as ctrl">
-    <div class="grid-block" >
+<div class="grid-block" ng-controller="colorCalcCtrl">
+  <div class="grid-content small-12 medium-6 input-fields" >
+    <form class="grid-block" ng-submit="addCard()">
       <div class="small-12 medium-6 grid-content">
-        <input id="base-color" class="small-12 base-color" type="text" placeholder="Base Color" ng-model="ctrl.bColor">
+        <input id="base-color" class="small-12 base-color" type="text" placeholder="Base Color" ng-model="bColor">
       </div>
       <div class="small-12 medium-6 grid-content">
-        <input class="small-12 result-color" type="text" placeholder="Result Color" ng-model="ctrl.rColor">
+        <input class="small-12 result-color" type="text" placeholder="Result Color" ng-model="rColor">
       </div>
       <div class="small-12 medium-6 grid-content">
-        <input type="submit" value="Register">
+        <input type="submit" value="register" >
       </div>
-    </div>
+    </form>
     <div class="card">
       <div class="card-divider">
       Click The Color To Copy It:
       </div>
       <div class="card-section palette-holder">
         <div class="grid-block ">
-          <div class="grid-content palette-base text-center" style="background: #{{ctrl.bColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your base color">Base of {{ctrl.bColor}}</span></div>
-          <div class="grid-content palette-result text-center" style="background: #{{ctrl.rColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your resulting color">Result of {{ctrl.rColor}}</span></div>
+          <div class="grid-content palette-base text-center" style="background: #{{bColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your base color">Base of {{bColor}}</span></div>
+          <div class="grid-content palette-result text-center" style="background: #{{rColor}};"><span data-tooltip aria-haspopup="true" class="has-tip" title="Add your resulting color">Result of {{rColor}}</span></div>
         </div>
       </div>
       <div class="card-section">
       <pre>saturate(darken(#eeeeee, 50), 50);</pre>
       </div>
     </div>
+    
+    <!-- <ul>
+      <li ng-repeat="item in list">#{{item.bColor}} -> {{item.rColor}}</li>
+    </ul> -->
+
   </div>
 
   <!--  The History Column -JMS -->
   <div class="grid-content small-12 medium-6 history-column">
-    <p class="history-header"><span data-tooltip aria-haspopup="true" class="has-tip" title="The rug. You know. It really tied the room together">Your History</span></p>
+    <p class="history-header"><span data-tooltip aria-haspopup="true" class="has-tip" title="">Your History</span></p>
     
-    <div class="card">
+    <div class="card" ng-repeat="item in list | reverse " >
       <div class="card-divider">
       Click The Color To Copy It:
       </div>
       <div class="card-section palette-holder">
       <div class="grid-block ">
-        <div class="grid-content palette-base text-center">Base</div>
-        <div class="grid-content palette-result text-center">Result</div>
+        <div class="grid-content palette-base text-center">Base #{{item.bColor}}</div>
+        <div class="grid-content palette-result text-center">Result #{{item.rColor}}</div>
       </div>
       </div>
       <div class="card-section">
