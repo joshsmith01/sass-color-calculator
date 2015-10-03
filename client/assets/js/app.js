@@ -15,8 +15,8 @@
     .run(run)
 
 
-    
-    // This conroller works to use data submitted by user for use in this controller. -JMS
+
+    // This controller works to use data submitted by user for use in this controller. -JMS
     .controller('MyFormCtrl', [function() {
         this.user = {
              name: ''
@@ -25,24 +25,18 @@
            console.log('User clicked register', this.user);
         };
     }])
-    
-    // This conroller works to use data submitted by user for use in this controller. -JMS
+    // This controller works to use data submitted by user for use in this controller. -JMS
 
     .controller('colorCalcCtrl', function($scope) {
       $scope.list = [];
 
       $scope.addCard = function() {
+        // Push the user generated hex colors to the history cards -JMS
         $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor});
-        // $scope.color.bColor = '';
-        // $scope.color.rColor = '';
-      }
-
-      $scope.getTextToCopy = function() {
-        
-        // var color = $(this).css("background-color");
-        // alert(color);
-        console.log('hi');
-      }
+        // Reset the input and current card to default color values -JMS
+        $scope.bColor = '';
+        $scope.rColor = '';
+      };
 
     })
 
@@ -71,5 +65,5 @@
   function run() {
     FastClick.attach(document.body);
   }
-  
+
 })();
