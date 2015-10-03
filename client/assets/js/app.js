@@ -13,16 +13,10 @@
   ])
     .config(config)
     .run(run)
-    // The original controller from 
-    .controller('directoryController', function($scope) {
-      $scope.list = [
-        {name: 'Scott', age: 29},
-        {name: 'Ross', age: 29},
-        {name: 'Ben', age: 32}, 
-        {name: 'Courteny', age: 29}
-      ]
-    })
-    // This conroller works to use data submitted by user for use in this controller. -JMS
+
+
+
+    // This controller works to use data submitted by user for use in this controller. -JMS
     .controller('MyFormCtrl', [function() {
         this.user = {
              name: ''
@@ -31,23 +25,29 @@
            console.log('User clicked register', this.user);
         };
     }])
-    
+    // This controller works to use data submitted by user for use in this controller. -JMS
 
-    // This conroller works to use data submitted by user for use in this controller. -JMS
-    .controller('colorCalcCtrl', ['$scope',function($scope) {
-        $scope.chiliSpicy = function() {
-          // alert('hi');
-          alert($scope.bColor);
+    .controller('colorCalcCtrl', function($scope) {
+      $scope.list = [];
+
+      $scope.addCard = function() {
+        // Push the user generated hex colors to the history cards -JMS
+        $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor});
+        // Reset the input and current card to default color values -JMS
+        $scope.bColor = '';
+        $scope.rColor = '';
       };
-    }])
+
+    })
+
+    // Custom filter to reverse the order of the array so that the latest entry resides on top. -JMS
+    .filter('reverse', function() {
+      return function(items) {
+        return items.slice().reverse();
+      };
+    })
+    // Keep this semicolon -JMS
     ;
-
-
-    // function CTRL ($scope) {
-    // $scope.val1 = 3;
-    // $scope.val2 = 4;
-    // $scope.total = function() {return $scope.val1 + $scope.val2;};
-    // }
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
@@ -65,5 +65,5 @@
   function run() {
     FastClick.attach(document.body);
   }
-  
+
 })();
