@@ -46,6 +46,7 @@ var paths = {
   appJS: [
     'client/assets/js/rgbcolor.js',
     'client/assets/js/color-0.4.1.js',
+    'client/assets/js/getColorFunction.js',
     'client/assets/js/app.js'
   ]
 }
