@@ -44,6 +44,8 @@ var paths = {
   ],
   // These files are for your app's JavaScript
   appJS: [
+    'client/assets/js/rgbcolor.js',
+    'client/assets/js/color-0.4.1.js',
     'client/assets/js/app.js'
   ]
 }
