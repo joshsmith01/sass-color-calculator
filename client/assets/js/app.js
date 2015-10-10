@@ -22,16 +22,13 @@
 
     $scope.addCard = function() {
       // Push the user generated hex colors to the history cards -JMS
-      $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor});
+      $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor, sassFunc: $scope.sassFunc});
       // Reset the input and current card to default color values -JMS
       $scope.bColor = '';
       $scope.rColor = '';
     };
 
     $scope.getColor = function () {
-      console.log('Hello from getColor');
-      testVar();
-
       function getColorFunction(colorString, hslDifferences, mode) {
 
         // default mode: sass
@@ -62,35 +59,29 @@
           colorFunction = "darken( " + colorFunction + ", " + hslDifferences[2] + " )";
         }
 
-        console.log(hslDifferences);
+        // Logs the hslDifferences to the console in an array. -JMS
         return ( colorFunction );
 
       }
 
       function getColorDifferences(start, end) {
-
         var differences = [];
-
         var startColor = Color(start);
         var endColor = Color(end);
-
         var startColorHSL = startColor.hslArray();
         var endColorHSL = endColor.hslArray();
-
         for (var i = 0; i < 3; i++) {
           differences[i] = startColorHSL[i] - endColorHSL[i];
         }
-
         return ( differences );
-
       }
 
       // Variables from the forked repo starting on line :57 -JMS
-      var startColor = $scope.rColor;
+      var startColor = $scope.bColor;
       var endColor = $scope.rColor;
       var differences = getColorDifferences(startColor, endColor);
-      var outputText = getColorFunction(startColor, differences);
 
+      $scope.sassFunc = getColorFunction(startColor, differences);
     };
 
   })

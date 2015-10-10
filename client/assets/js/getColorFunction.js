@@ -40,6 +40,7 @@ function getColorDifferences(start, end) {
 
   var differences = [];
 
+  //var startColor = Color(start);
   var startColor = Color(start);
   var endColor = Color(end);
 
@@ -53,16 +54,3 @@ function getColorDifferences(start, end) {
   return ( differences );
 
 }
-
-// #startColor
-// #endColor
-
-//$(function () {
-//  $(".colorInput").on("change", function () {
-//    var startColor = document.getElementById("startColor").value;
-//    var endColor = document.getElementById("endColor").value;
-//    var differences = getColorDifferences(startColor, endColor);
-//    var outputText = getColorFunction(startColor, differences);
-//    $("#functionOutput").text(outputText);
-//  });
-//});
