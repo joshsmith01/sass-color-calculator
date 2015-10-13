@@ -21,8 +21,9 @@ You'll need the following software installed to get started.
 Clone this repository, where `app` is the name of your app.
 
 ```bash
-git clone https://github.com/zurb/foundation-apps-template.git app
+git clone https://joshsmith01@bitbucket.org/joshsmith01/sass-color-calculator.git sass-color-calculator
 ```
+
 
 Change into the directory.
 
