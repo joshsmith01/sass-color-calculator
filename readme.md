@@ -28,7 +28,7 @@ git clone https://joshsmith01@bitbucket.org/joshsmith01/sass-color-calculator.gi
 Change into the directory.
 
 ```bash
-cd app
+cd sass-color-calculator
 ```
 
 Install the dependencies. If you're running Mac OS or Linux, you may need to run `sudo npm install` instead, depending on how your machine is configured.
