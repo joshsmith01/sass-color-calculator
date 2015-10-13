@@ -100,11 +100,10 @@
 
   function config($urlProvider, $locationProvider) {
     $urlProvider.otherwise('/');
-
     $locationProvider.html5Mode({
-      enabled:false,
-      requireBase: false
-    });
+    enabled:false,
+    requireBase: false
+  });
 
     $locationProvider.hashPrefix('!');
   }
