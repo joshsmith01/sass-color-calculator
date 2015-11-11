@@ -5,14 +5,16 @@
   var app =  angular.module('application', [
     'ui.router',
     'ngAnimate',
+    'ngStorage',
+    'angular-clipboard',
 
     //foundation
     'foundation',
     'foundation.dynamicRouting',
     'foundation.dynamicRouting.animations'
   ]);
-  app.config(config)
-  app.run(run)
+  app.config(config);
+  app.run(run);
 
 
   // This controller works to use data submitted by user for use in this controller. -JMS
@@ -23,6 +25,10 @@
     $scope.addCard = function() {
       // Push the user generated hex colors to the history cards -JMS
       $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor, sassFunc: $scope.sassFunc});
+
+      // Add values to local storage in case there is a page refresh that happens before the user is completed their process. -JMS 2015-11-11
+      $scope.$storage = $scope.bColor;
+      $scope.$storage = $scope.rColor;
       // Reset the input and current card to default color values -JMS
       $scope.bColor = '';
       $scope.rColor = '';
@@ -78,24 +84,64 @@
 
       // Variables from the forked repo starting on line :57 -JMS
       var startColor = $scope.bColor;
+      //alert(startColor);
       var endColor = $scope.rColor;
       var differences = getColorDifferences(startColor, endColor);
 
       $scope.sassFunc = getColorFunction(startColor, differences);
     };
 
-  })
+  });
 
   // Custom filter to reverse the order of the array so that the latest entry resides on top. -JMS
   app.filter('reverse', function() {
     return function(items) {
       return items.slice().reverse();
     };
-  })
+  });
+
+
+  app.controller('MyController', ['$scope', function ($scope) {
+    $scope.textToCopy = 'I can copy by clicking!';
+
+    $scope.success = function () {
+      console.log('Copied!');
+    };
+
+    $scope.fail = function (err) {
+      console.error('Error!', err);
+    };
+  }]);
+
+
+  app.directive('customValidation', function () {
+    return {
+      require: 'ngModel',
+      link: function (scope, element, attrs, modelCtrl) {
+
+        modelCtrl.$parsers.push(function (inputValue) {
+
+          //var transformedInput = inputValue.toLowerCase().replace(/^(?!#)/g, '#');
+          //alert(transformedInput);
+
+          // [TODO] This only uses hex colors now. I can't get it to check for simple_colors anymore. -JMS 2015-11-11
+          if (inputValue.indexOf('#') != 0) {
+            var transformedInput = '#' + inputValue.toLowerCase();
+            //alert(tranformedInput);
+          } else {
+            var transformedInput = inputValue.toLowerCase();
+          }
+          //if (transformedInput != inputValue) {
+          //  modelCtrl.$setViewValue(transformedInput);
+          //  modelCtrl.$render();
+          //}
+
+          return transformedInput;
+        });
+      }
+    };
+  });
   // Keep this semicolon -JMS
-  ;
-
-
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
   function config($urlProvider, $locationProvider) {
