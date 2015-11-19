@@ -23,6 +23,7 @@
   "private": true,
   "dependencies": {
     "angular": "^1.4.7",
-    "angular-clipboard": "^1.1.1"
+    "angular-clipboard": "^1.1.1",
+    "firebase": "^2.3.2"
   }
 }
