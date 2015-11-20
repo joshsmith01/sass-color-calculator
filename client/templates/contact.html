@@ -23,8 +23,10 @@ animationIn: fadeIn
 
       <div ng-controller="MyFormCtrl as ctrl">
         <form name="myForm" ng-submit="ctrl.register()">
-          Name: <input type="text" ng-model="ctrl.user.name">
-          <input type="submit" value="Register">
+            Name: <input type="text" ng-model="ctrl.user.name">
+            Email: <input type="email" placeholder="Email">
+            Comment: <textarea type="text" ></textarea>
+          <input type="submit" value="Submit">
         </form>
       </div>
 

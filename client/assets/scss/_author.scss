@@ -1,3 +1,7 @@
+body {
+  background: url('../img/mountain-scene.jpg');
+  background-size: cover;
+}
 .text-red {
   color: red;
 }
@@ -11,7 +15,6 @@
   padding: 3rem;
   background: lightblue;
   cursor: pointer;
-  
 }
 .palette-result {
   padding: 3rem;
@@ -28,7 +31,7 @@
   height: 2.4rem;
   padding: 0.5rem;
   margin: 0 0 1rem 0;
-  background: #eee;
+  background: #fff;
   color: #000;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
@@ -39,4 +42,19 @@
   .card {
     border: 2.5px solid #E8E8E8;
   }
+}
+.card-section pre {
+  word-wrap: break-word;
+}
+.card-divider {
+  background: #1fa7cb;
+  text-align: center;
+  color: #ffffff;
+}
+.card-title {
+  background: #e2e2e2;
+  padding: .5rem .6rem;
+  color: #333333;
+  border-radius: 3px;
+  box-shadow: #1e1e1e 2px 2px 8px;
 }
