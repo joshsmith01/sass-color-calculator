@@ -43,6 +43,7 @@ var paths = {
     '!bower_components/foundation-apps/js/angular/app.js',
     'node_modules/ngstorage/ngStorage.js',
     'node_modules/angular-clipboard/angular-clipboard.js',
+    'node_modules/angularfire/dist/angularfire.min.js',
   ],
   // These files are for your app's JavaScript
   appJS: [

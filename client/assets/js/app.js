@@ -7,6 +7,7 @@
     'ngAnimate',
     'ngStorage',
     'angular-clipboard',
+    'firebase',
 
     //foundation
     'foundation',

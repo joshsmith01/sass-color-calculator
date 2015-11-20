@@ -24,6 +24,6 @@
   "dependencies": {
     "angular": "^1.4.7",
     "angular-clipboard": "^1.1.1",
-    "firebase": "^2.3.2"
+    "angularfire": "^1.1.3"
   }
 }
