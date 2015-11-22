@@ -1,3 +1,7 @@
+.shadow {
+  border-radius: 3px;
+  box-shadow: #1e1e1e 2px 2px 8px;
+}
 body {
   background: url('../img/mountain-scene.jpg');
   background-size: cover;
@@ -44,7 +48,11 @@ body {
   }
 }
 .card-section pre {
-  word-wrap: break-word;
+  white-space: pre-wrap;
+  // text-indent: 2rem;
+  padding-left: 1rem;
+  text-indent: -1rem;
+  cursor: pointer;
 }
 .card-divider {
   background: #1fa7cb;
@@ -55,6 +63,36 @@ body {
   background: #e2e2e2;
   padding: .5rem .6rem;
   color: #333333;
-  border-radius: 3px;
-  box-shadow: #1e1e1e 2px 2px 8px;
+  @extend .shadow;
 }
+
+.btn-execute {
+  text-transform: uppercase;
+  font-size: 1rem;
+  background: #c69;
+  @extend .shadow;
+  &:hover {
+    background: #b37399;
+  }
+  &:focus {
+    background: #be7ea4;
+  }
+}
+// Body copy for the home page-break-inside:
+.text-intro {
+  padding: 1rem;
+  background-color: rgba($primary-color, 0.73);
+  // background-color: $primary-color;
+  @extend .shadow;
+}
+
+/*==========================================
+=            Font Awesome Fonts            =
+==========================================*/
+
+.fa {
+  font-size: 4rem;
+}
+
+/*=====  End of Font Awesome Fonts  ======*/
+

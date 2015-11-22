@@ -7,29 +7,30 @@ animationIn: fadeIn
 <h1>Contact Me</h1>
 
   <div class="grid-frame">
-    <div class="grid-block">
-      <div class="grid-content" ng-controller="directoryController">
-        <ul>
-          <li ng-repeat="item in list | filter:search">
-            {{item.name}} - <em>{{item.age}}</em>
-          </li>
-        </ul>
-      </div>
-      <div class="grid-content">
+    <div class="small-12 medium-6 grid-content">
+      <p>Feel free to contact me about a feature enhancement or a bug fix.</p>
+      <p>The very best way to help is to contribute on GitHub</p>
+      
+     
+        <div class="grid-content align-center">
+          <ul class="inline-list align-center text-center">
+            <li><a href="https://github.com/joshsmith01" target="_blank"><i class="fa fa-github-square"></i></a></li>
+            <li><a href="https://bitbucket.org/joshsmith01/" target="_blank"><i class="fa fa-bitbucket-square"></i></a></li>
+            <li><a href="https://twitter.com/joshsmith01" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+            <li><a href="https://twitter.com/joshsmith01" target="_blank"><i class="fa fa-code-fork"></i></a></li>
+          </ul>
+        </div>
 
-      </div>
     </div>
-    <div class="grid-content">
 
-      <div ng-controller="MyFormCtrl as ctrl">
+    <div class="small-12 medium-6 grid-content">
+      <div>
         <form name="myForm" ng-submit="ctrl.register()">
             Name: <input type="text" ng-model="ctrl.user.name">
             Email: <input type="email" placeholder="Email">
             Comment: <textarea type="text" ></textarea>
-          <input type="submit" value="Submit">
+          <input class="button expand btn-execute" type="submit" value="Submit">
         </form>
-      </div>
-
-      
+      </div>     
     </div>
   </div>

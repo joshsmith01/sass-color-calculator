@@ -7,7 +7,6 @@
     'ngAnimate',
     'ngStorage',
     'angular-clipboard',
-    'firebase',
 
     //foundation
     'foundation',
@@ -26,6 +25,7 @@
     $scope.addCard = function() {
       // Push the user generated hex colors to the history cards -JMS
       $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor, sassFunc: $scope.sassFunc});
+      console.log($scope.list);
 
       // Add values to local storage in case there is a page refresh that happens before the user is completed their process. -JMS 2015-11-11
       $scope.$storage = $scope.bColor;

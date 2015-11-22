@@ -27,7 +27,8 @@ var paths = {
   // Sass will check these folders for files when you use @import.
   sass: [
     'client/assets/scss',
-    'bower_components/foundation-apps/scss'
+    'bower_components/foundation-apps/scss',
+    'node_modules/font-awesome/scss/font-awesome.scss'
   ],
   // These files include Foundation for Apps and its dependencies
   foundationJS: [
@@ -43,7 +44,6 @@ var paths = {
     '!bower_components/foundation-apps/js/angular/app.js',
     'node_modules/ngstorage/ngStorage.js',
     'node_modules/angular-clipboard/angular-clipboard.js',
-    'node_modules/angularfire/dist/angularfire.min.js',
   ],
   // These files are for your app's JavaScript
   appJS: [
