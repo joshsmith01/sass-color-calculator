@@ -54,7 +54,6 @@ npm start build
 ```
 
 ## Contributing
-### I'd love to see your love on GitHub!
 #### Here are ways to get involved:
 
 1. [Star](https://github.com/joshsmith01/sass-color-calculator/stargazers) the project!
