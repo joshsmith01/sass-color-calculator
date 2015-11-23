@@ -1,10 +1,5 @@
-# Foundation for Apps Template
+# Sass Color Calculator
 
-[![devDependency Status](https://david-dm.org/zurb/foundation-apps-template/dev-status.svg)](https://david-dm.org/zurb/foundation-apps-template#info=devDependencies)
-
-This is the default template project for Foundation for Apps, powered by Gulp, Angular, and libsass. It provides you with a basic template to get started with Foundation for Apps and Angular.
-
-If you're already an Angular developer, you may instead want to install the components into your own stack using Bower: `bower install foundation-apps`
 
 ## Requirements
 
@@ -20,8 +15,14 @@ You'll need the following software installed to get started.
 
 Clone this repository, where `app` is the name of your app.
 
+If you prefer to work off of Bitbucket then use:
 ```bash
 git clone https://joshsmith01@bitbucket.org/joshsmith01/sass-color-calculator.git sass-color-calculator
+```
+
+If you prefer to work off of GitHub then use:
+```bash
+git clone https://github.com/joshsmith01/sass-color-calculator.git sass-color-calculator
 ```
 
 
