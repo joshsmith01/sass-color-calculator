@@ -52,3 +52,20 @@ To run the compiling process once, without watching any files, use the `build` c
 ```bash
 npm start build
 ```
+
+## Contributing
+### I'd love to see your love on GitHub!
+#### Here are ways to get involved:
+
+1. [Star](https://github.com/joshsmith01/sass-color-calculator/stargazers) the project!
+2. Answer questions that come through [GitHub issues](https://github.com/joshsmith01/sass-color-calculator/issues)
+3. Report a bug that you find
+4. Share a theme you've built on top of Sass Color Calculator
+
+#### Pull Requests
+
+Pull requests are highly appreciated.
+
+1. Solve a problem. Features are great, but even better is cleaning-up and fixing issues in the code that you discover
+2. Make sure that your code is bug-free and does not introduce new bugs
+3. Create a [pull request](https://help.github.com/articles/creating-a-pull-request)
