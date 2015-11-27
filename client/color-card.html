@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-divider">
+        Click The Color To Copy It:
+    </div>
+
+    <div class="card-input card-section palette-holder" ng-controller="MyController">
+        <div class="grid-block ">
+            <div class="grid-content palette-base text-center" clipboard text="bColor" on-copied="success()"
+                 on-error="fail(err)" style="background: {{bColor}};"><span data-tooltip aria-haspopup="true"
+                                                                            class="has-tip card-title"
+                                                                            title="Add your base color">Base of {{bColor}}</span>
+            </div>
+            <div class="grid-content palette-result text-center" clipboard text="rColor" on-copied="success()"
+                 on-error="fail(err)" style="background: {{rColor}};"><span data-tooltip aria-haspopup="true"
+                                                                            class="has-tip card-title"
+                                                                            title="Add your resulting color">Result of {{rColor}}</span>
+            </div>
+        </div>
+    </div>
+</div>
