@@ -15,9 +15,10 @@ You'll need the following software installed to get started.
 
 Clone this repository, where `app` is the name of your app.
 
-If you prefer to work off of Bitbucket then use:
+If you prefer to work off of Bitbucket got to:
+[https://bitbucket.org/joshsmith01/sass-color-calculator](https://bitbucket.org/joshsmith01/sass-color-calculator)
 ```bash
-git clone https://joshsmith01@bitbucket.org/joshsmith01/sass-color-calculator.git sass-color-calculator
+git clone https://<YOUR_USERNAME>@bitbucket.org/joshsmith01/sass-color-calculator.git sass-color-calculator
 ```
 
 If you prefer to work off of GitHub then use:
