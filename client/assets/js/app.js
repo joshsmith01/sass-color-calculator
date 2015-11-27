@@ -142,6 +142,12 @@
       }
     };
   });
+
+  app.directive('sassColorCard', function() {
+    return {
+      templateUrl: 'color-card.html'
+    }
+  });
   // Keep this semicolon -JMS
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
