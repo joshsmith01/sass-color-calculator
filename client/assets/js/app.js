@@ -30,6 +30,16 @@
       // Add values to local storage in case there is a page refresh that happens before the user is completed their process. -JMS 2015-11-11
       $scope.$storage = $scope.bColor;
       $scope.$storage = $scope.rColor;
+
+      // CREATE a new firebase installation and add data from the card to the json object on the server. -JMS 2015-11-27
+      var myFirebaseRef = new Firebase("https://dazzling-torch-5971.firebaseio.com/");
+
+      myFirebaseRef.push({
+        bColor: $scope.bColor,
+        rColor: $scope.rColor,
+        sassFunc: $scope.sassFunc
+      });
+
       // Reset the input and current card to default color values -JMS
       $scope.bColor = '';
       $scope.rColor = '';

@@ -23,7 +23,8 @@
     "tests"
   ],
   "dependencies": {
-    "foundation-apps": "~1.1.0"
+    "foundation-apps": "~1.1.0",
+    "firebase": "~2.3.2"
   },
   "devDependencies": {
     "ng-clip": "~0.2.6"

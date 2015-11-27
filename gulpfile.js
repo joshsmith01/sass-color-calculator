@@ -11,6 +11,7 @@ var gulp     = require('gulp');
 var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
+var Firebase = require("firebase");
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -41,6 +42,7 @@ var paths = {
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/foundation-apps/js/vendor/**/*.js',
     'bower_components/foundation-apps/js/angular/**/*.js',
+    'bower_components/firebase/firebase.js',
     '!bower_components/foundation-apps/js/angular/app.js',
     'node_modules/ngstorage/ngStorage.js',
     'node_modules/angular-clipboard/angular-clipboard.js',
