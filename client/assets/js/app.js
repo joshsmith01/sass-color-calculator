@@ -31,14 +31,33 @@
       $scope.$storage = $scope.bColor;
       $scope.$storage = $scope.rColor;
 
+
       // CREATE a new firebase installation and add data from the card to the json object on the server. -JMS 2015-11-27
       var myFirebaseRef = new Firebase("https://dazzling-torch-5971.firebaseio.com/");
 
-      myFirebaseRef.push({
-        bColor: $scope.bColor,
-        rColor: $scope.rColor,
-        sassFunc: $scope.sassFunc
-      });
+      // Create a callback which logs the current auth state
+      function authDataCallback(authData) {
+        if (authData) {
+          console.log("User " + authData.uid + " is logged in with " + authData.provider);
+          var userId = authData.uid;
+          myFirebaseRef.child('users').child(userId).push({
+            uid: authData.uid,
+            bColor: $scope.bColor,
+            rColor: $scope.rColor,
+            sassFunc: $scope.sassFunc
+          });
+        } else {
+          console.log("User is logged out");
+        }
+      }
+
+
+      // Register the callback to be fired every time auth state changes
+      myFirebaseRef.onAuth(authDataCallback);
+
+
+
+
 
       // Reset the input and current card to default color values -JMS
       $scope.bColor = '';
@@ -109,6 +128,21 @@
     return function(items) {
       return items.slice().reverse();
     };
+  });
+
+
+  app.controller('SampleCtrl', function ($scope, $firebaseAuth) {
+    var ref = new Firebase("https://dazzling-torch-5971.firebaseio.com/");
+
+    // create an instance of the authentication service
+    var auth = $firebaseAuth(ref);
+
+    // login with Facebook
+    auth.$authWithOAuthPopup("facebook").then(function (authData) {
+      console.log("Logged in as:", authData.uid);
+    }).catch(function (error) {
+      console.log("Authentication failed:", error);
+    });
   });
 
 

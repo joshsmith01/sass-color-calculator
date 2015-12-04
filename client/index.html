@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <TITLE>Sass Color Calculator</TITLE>
-      <META NAME="author" CONTENT="Josh Smith">
-      <META NAME="Description"
+      <title>Sass Color Calculator | Create SASS Color Functions</title>
+      <meta NAME="author" CONTENT="Josh Smith">
+      <meta NAME="Description"
             CONTENT="Calculate the value between two colors and get the sass function that binds them together. Perfect for front-end developers who use SASS variables. ">
-      <META NAME="Keywords" CONTENT="sass, functions, color, calculate">
-      <META NAME="distribution" CONTENT="Global">
+      <meta NAME="Keywords" CONTENT="sass, functions, color, calculate">
+      <meta NAME="distribution" CONTENT="Global">
 
       <link href="./assets/css/app.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -41,11 +41,48 @@
       
       <div class="grid-content shrink" style="padding: 0;">
         <div class="grid-container">
-          
-          <ul class="primary condense menu-bar">
-            <li><a ui-sref="home"><strong>Sass Color Calculator</strong></a></li>
-            <li><a ui-sref="contact"><strong>Contact</strong></a></li>
-          </ul>
+
+
+          <div class="menu-group primary">
+            <div class="menu-group-left">
+              <ul class="primary condense menu-bar">
+                <li><a ui-sref="home"><strong>Sass Color Calculator</strong></a></li>
+                <li><a ui-sref="contact"><strong>Contact</strong></a></li>
+              </ul>
+            </div>
+
+            <div class="menu-group-right">
+              <ul class="menu-bar right" >
+                <li id="login"><a  ><strong>Login</strong></a></li>
+                <li id="logout"><a  ><strong>Logout</strong></a></li>
+              </ul>
+            </div>
+
+            <script>
+              (function () {
+                // Set a new Firebase instance that will be used throughout user login/logout functions. -JMS
+                var ref = new Firebase("https://dazzling-torch-5971.firebaseio.com/");
+                // Log users in with their Facebook accounts. -JMS
+                $('#login').click(function(){
+                  ref.authWithOAuthPopup("facebook", function (error, authData) {
+                    if (error) {
+                      console.log("Login Failed!", error);
+                    } else {
+                      console.log("User " + authData.uid + " is logged in with " + authData.provider);
+                    }
+                  });
+                });
+                // Log the user out -JMS
+                $('#logout').click(function() {
+                  ref.unauth();
+                  location.reload();
+                })
+              })();
+
+            </script>
+          </div>
+
+
 
         </div>
       </div>
