@@ -159,7 +159,7 @@
   }]);
 
 
-  app.directive('customValidation', function () {
+  app.directive('colorValidation', function () {
     return {
       require: 'ngModel',
       link: function (scope, element, attrs, modelCtrl) {
