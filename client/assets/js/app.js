@@ -25,7 +25,7 @@
     $scope.addCard = function() {
       // Push the user generated hex colors to the history cards -JMS
       $scope.list.push({bColor: $scope.bColor, rColor: $scope.rColor, sassFunc: $scope.sassFunc});
-      console.log($scope.list);
+      //console.log($scope.list);
 
       // Add values to local storage in case there is a page refresh that happens before the user is completed their process. -JMS 2015-11-11
       $scope.$storage = $scope.bColor;
@@ -38,7 +38,7 @@
       // Create a callback which logs the current auth state
       function authDataCallback(authData) {
         if (authData) {
-          console.log("User " + authData.uid + " is logged in with " + authData.provider);
+          //console.log("User " + authData.uid + " is logged in with " + authData.provider);
           var userId = authData.uid;
           myFirebaseRef.child('users').child(userId).push({
             uid: authData.uid,
@@ -47,7 +47,7 @@
             sassFunc: $scope.sassFunc
           });
         } else {
-          console.log("User is logged out");
+          //console.log("User is logged out");
         }
       }
 
@@ -139,9 +139,9 @@
 
     // login with Facebook
     auth.$authWithOAuthPopup("facebook").then(function (authData) {
-      console.log("Logged in as:", authData.uid);
+      //console.log("Logged in as:", authData.uid);
     }).catch(function (error) {
-      console.log("Authentication failed:", error);
+      //console.log("Authentication failed:", error);
     });
   });
 
@@ -150,11 +150,11 @@
     $scope.textToCopy = 'I can copy by clicking!';
 
     $scope.success = function () {
-      console.log('Copied!');
+      //console.log('Copied!');
     };
 
     $scope.fail = function (err) {
-      console.error('Error!', err);
+      //console.error('Error!', err);
     };
   }]);
 
